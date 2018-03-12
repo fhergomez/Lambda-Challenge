@@ -7,7 +7,7 @@ After writing your function uncomment the matching function reference at the bot
 // 1. Write a function called helloWorld that returns the string 'Hello World!'.
 
 function helloWorld() {
-
+    return 'Hello World!';
 }
 
 /*
@@ -23,8 +23,16 @@ function helloWorld() {
              lambdaSchool(8); // returns 8
 */
 
-function lambdaSchool() {
-
+function lambdaSchool(num) {
+    if ((num % 3 === 0) && (num % 5 === 0)) {
+        return 'Lambda School';
+    } else if ((num % 3) === 0) {
+        return 'Lambda';
+    } else if ((num % 5) === 0) {
+        return 'School';
+    } else {
+        return num;
+    }
 }
 
 /*
@@ -38,8 +46,17 @@ function lambdaSchool() {
              longestString(['JavaScript', 'HTML', 'CSS']); // returns 'JavaScript'
 */
 
-function longestString() {
+function longestString(arr) {
+    var longest = -1;
+    var index = -1;
 
+    for (var i = 0; i < arr.length; i++) {
+        if(arr[i].length > longest) {
+            longest = arr[i].length;
+            index = i;
+        }
+    }
+    return arr[index];
 }
 
 /*
