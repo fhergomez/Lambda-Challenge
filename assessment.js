@@ -47,16 +47,16 @@ function lambdaSchool(num) {
 */
 
 function longestString(arr) {
-    var longest = -1;
-    var index = -1;
+    var longest = "";
 
     for (var i = 0; i < arr.length; i++) {
-        if(arr[i].length > longest) {
-            longest = arr[i].length;
-            index = i;
+        var index = arr[i];
+        if(index.length > longest.length) {
+            longest = index;
         }
     }
-    return arr[index];
+
+    return longest;
 }
 
 /*
@@ -80,8 +80,15 @@ function longestString(arr) {
              computeUserAverageAge(users); // returns 62 (This number is rounded up from 61.6666)
 */
 
-function computeUserAverageAge() {
-
+function computeUserAverageAge(users) {
+    var ageSum = 0;
+    var averageAge = 0;
+    for (var i = 0;i < users.length;i++) {
+        var key = users[i];
+        ageSum += key.age;
+        averageAge = Math.round(ageSum / users.length);
+    }
+    return averageAge;
 }
 
 module.exports = {
